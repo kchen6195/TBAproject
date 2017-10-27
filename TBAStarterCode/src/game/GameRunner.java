@@ -10,17 +10,17 @@ public class GameRunner {
 
     public static void main (String[] args)
     {
-        Room[][] map = new Room[5][5];
+        Room[][] map = new Room[5][5]; // makes layout
         for (int j = 0; j<map.length; j++)
         {
-        	Room[] row = map[j];
+        	Room[] row = map[j]; //row 1
             for (int i = 0; i<row.length;i++)
             {
                 boolean[] doors = {true,true,true,true};
                 Person[] people = {};
                 Item[] items = {};
 
-                row[i] = new Hallway(doors, people, items, i, j);
+                row[i] = new Hallway(doors, people, items, i, j); //row 1 col 2
             }
 
         }
@@ -42,10 +42,13 @@ public class GameRunner {
             Utilities.movePlayer(tech, player1,move);
             //gameOn = false;
             
+            
+            /* [room[person,creature, item]][][]
+             [][][]
 
+            
 
-
-
+			*/
 
 
 
