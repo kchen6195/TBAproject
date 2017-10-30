@@ -3,6 +3,7 @@ package living;
 public class Player implements Bots{
 	private int damage;
 	private int health;
+	private String food;
 	private String[] inventory = new String[3];
 	public Player(String sword, String armor, String food)
 	{
@@ -11,6 +12,7 @@ public class Player implements Bots{
 		this.inventory[2]= food;
 		this.damage = getDamage();
 		this.health= getHealth();
+		this.food= getFood();
 		
 	}
 	public int getDamage()
@@ -67,7 +69,8 @@ public class Player implements Bots{
 	}
 	public void printBot()
 	{
-		System.out.println(" Damage: "+ damage
-				+ " Health: "+ health);
+		/*System.out.print(" Damage: "+ damage
+				+ " Health: "+ health+ " Food: "+ food);*/
+		System.out.print("[ Player ]");
 	}
 }

@@ -116,7 +116,8 @@ public class Enemies implements Bots{
 	}
 	public void printBot()
 	{
-		System.out.println("BattleCry: "+ cry + " Damage: "+ damage
-				+ " Health: "+ health);
+		/*System.out.print("BattleCry: "+ cry + " Damage: "+ damage
+				+ " Health: "+ health);*/
+		System.out.print("[ "+ cry +" ]");
 	}
 }

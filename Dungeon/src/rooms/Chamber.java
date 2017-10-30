@@ -42,4 +42,5 @@ public abstract class Chamber {
     {
     	return y;
     }
+    public abstract void print();
 }

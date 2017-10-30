@@ -89,11 +89,12 @@ public class Merchant extends Enemies{
 	
 	public void printBot()
 	{
-		System.out.println(cry + "\n"
+		/*System.out.println(cry + "\n"
 				+"Products: "+ "\n" 
 				+ product[0]+ " : "+ price[0]+" gold" +"\n"
 				+ product[1]+ " : "+ price[1]+" gold" + "\n"
-				+ product[2]+ " : "+ price[2]+" gold" );
+				+ product[2]+ " : "+ price[2]+" gold" );*/
+		System.out.println("[ Shop ]");
 	}
 }
 	
