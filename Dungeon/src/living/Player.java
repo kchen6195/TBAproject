@@ -4,6 +4,8 @@ public class Player implements Bots{
 	private int damage;
 	private int health;
 	private String food;
+	private int posX;
+	private int posY;
 	private String[] inventory = new String[3];
 	public Player(String sword, String armor, String food)
 	{
@@ -13,7 +15,12 @@ public class Player implements Bots{
 		this.damage = getDamage();
 		this.health= getHealth();
 		this.food= getFood();
-		
+		setX(0);
+		setY(0);
+	}
+	public Player()
+	{
+		this(" ", " ", " ");
 	}
 	public int getDamage()
 	{
@@ -66,6 +73,23 @@ public class Player implements Bots{
 	public String getFood()
 	{
 		return inventory[2];
+	}
+	public void setX(int x )
+	{
+		this.posX = x;
+		
+	}
+	public void setY(int y )
+	{
+		this.posY = y;
+	}
+	public int getX()
+	{
+		return this.posX;
+	}
+	public int getY()
+	{
+		return this.posY;
 	}
 	public void printBot()
 	{

@@ -11,9 +11,13 @@ import util.utilities;
 
 public class Board {
 	private Chamber[][] map;
+	private int maxY;
+	private int maxX;
 	public Board(int vert, int horz)
 	{
-		Chamber[][] map = new Chamber[vert][horz];
+		this.maxY = vert;
+		this.maxX = horz;
+		this.map= new Chamber[vert][horz];
 		for (int j = 0; j<map.length; j++)
         {
         	
@@ -24,7 +28,7 @@ public class Board {
             		Player champ = new Player(" "," "," ");
             	
             		Bots[] bots= {champ};
-            		this.map[j][i]= new Fight(bots,0,true,j+1,i+1);
+            		map[j][i]= new Fight(bots,0,true,j+1,i+1);
             	}
             	else if(i== map[j].length-1)
             	{
@@ -32,17 +36,23 @@ public class Board {
             	
             		Bots[] bots = {merch};
             		
-            		this.map[j][i]= new Shop(bots,0,false,j+1,i+1);
+            		map[j][i]= new Shop(bots,0,false,j+1,i+1);
             	}
             	else
             	{
             		Enemies enny = new Enemies(j+1);
             		Bots[] bots = {enny};
-            		this.map[j][i]= new Fight(bots,utilities.getGold(j+1),false,j+1,i+1);
+            		map[j][i]= new Fight(bots,utilities.getGold(j+1),false,j+1,i+1);
             	}
             }
 	}
 }
+	public Board(int vert)
+	{
+		this(vert,vert);
+	}
+	
+	
 	public void printBoard()
 	{
 		for (int j = 0; j<this.map.length; j++)
@@ -53,5 +63,13 @@ public class Board {
             	this.map[j][i].print();
             }
 		}
+	}
+	public int getMaxY()
+	{
+		return this.maxY-1;
+	}
+	public int getMaxX()
+	{
+		return this.maxX-1;
 	}
 }
