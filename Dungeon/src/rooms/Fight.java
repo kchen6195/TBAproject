@@ -12,6 +12,12 @@ public class Fight extends Chamber{
 	{
 		  if (getOccupants().length != 0)
 	        {
+			  if(getOccupants().length== 2)
+			  {
+				  
+				  getOccupants()[1].printBot();
+			  }
+			  else
 	            getOccupants()[0].printBot();
 	        }
 	        else if (this.explored)

@@ -10,7 +10,7 @@ import rooms.Shop;
 import util.utilities;
 
 public class Board {
-	private Chamber[][] map;
+	public Chamber[][] map;
 	private int maxY;
 	private int maxX;
 	public Board(int vert, int horz)
