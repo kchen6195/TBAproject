@@ -26,8 +26,10 @@ public class GameRunner {
 				+ "\nYou must defeat 1 monster on each floor to progress. Trust me you want to fight more than 1."
 				+  "\n type up, down, right and left to move.\n");
 		boolean gameOn = true;
+		boolean lose = false;
 		while(gameOn)
 		{
+			//check for player health each time;
 			game.printBoard();
 			Scanner move = new Scanner(System.in);
 			//System.out.print(move.next());
@@ -80,8 +82,9 @@ public class GameRunner {
 					
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
 					champ.setX(champ.getX()+1);
-					if(game.map[champ.getY()][champ.getX()].getOccupants().length)
+					if(game.map[champ.getY()][champ.getX()].getOccupants().length==2)
 					{
+						Scanner fight = new Scanner(System.in);
 						
 					}
 					System.out.println(champ.getX());
@@ -111,8 +114,11 @@ public class GameRunner {
 				System.out.println("type up, down, right or left.");
 			}
 		}
+		
         }
+	
+	}
 
 		
 		
-	}
+	

@@ -4,8 +4,8 @@ import util.utilities;
 
 public class Enemies implements Bots{
 	protected int level;
-	private int damage;
-	private int health;
+	public int damage;
+	public int health;
 	protected String cry;
 	private boolean rare;
 	public Enemies(int floor)

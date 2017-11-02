@@ -91,6 +91,7 @@ public class Player implements Bots{
 	{
 		return this.posY;
 	}
+	
 	public void printBot()
 	{
 		/*System.out.print(" Damage: "+ damage
