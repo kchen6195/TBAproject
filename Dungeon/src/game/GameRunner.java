@@ -48,6 +48,7 @@ public class GameRunner {
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
 					champ.setY(champ.getY()-1);
 					System.out.println(champ.getY());
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 					// []
 				}
 			}
@@ -66,6 +67,7 @@ public class GameRunner {
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
 					champ.setY(champ.getY()+1);
 					System.out.println(champ.getY());
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 				}
 			}
 			if(input.equalsIgnoreCase("right"))
@@ -107,6 +109,7 @@ public class GameRunner {
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
 					champ.setX(champ.getX()-1);
 					System.out.println(champ.getX());
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 				}
 			}
 			else
