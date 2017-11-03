@@ -86,8 +86,17 @@ public class GameRunner {
 					champ.setX(champ.getX()+1);
 					if(game.map[champ.getY()][champ.getX()].getOccupants().length==2)
 					{
-						Scanner fight = new Scanner(System.in);
+					/*	boolean action = true;
+						while(action)
+						{
+							Scanner fight = new Scanner(System.in);
+							if(fight.next().equalsIgnoreCase("attack"))
+									{
+										
+									}
+						}
 						
+					*/
 					}
 					System.out.println(champ.getX());
 					game.map[champ.getY()][champ.getX()].addOccupant(champ);
