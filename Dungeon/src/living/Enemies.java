@@ -61,7 +61,8 @@ public class Enemies implements Bots{
 		}
 		if(level == 2)
 		{
-			return utilities.getRandom(4,8);
+			return utilities.getRandom(1,1);
+			//return utilities.getRandom(4,8);
 		}
 		if(level == 3)
 		{

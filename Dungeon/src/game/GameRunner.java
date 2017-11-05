@@ -17,6 +17,7 @@ public class GameRunner {
 
 	public static void main(String[] args) {
 		Bots[] empty = new Bots[0];
+		
 		Player champ = new Player();
 		boolean action = true;
 		//x.printBot();
@@ -44,12 +45,22 @@ public class GameRunner {
 				{
 					System.out.println("You're on the top floor");
 				}
+				else if(game.map[champ.getY()-1][champ.getX()].explored)
+				{
+					game.map[champ.getY()][champ.getX()].setOccupants(empty);
+					champ.setY(champ.getY()-1);
+					
+					
+					
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
+				}
 				else
 {
 					
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
-					champ.setY(champ.getY()+1);
 					
+					champ.setY(champ.getY()-1);
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 					if(game.map[champ.getY()][champ.getX()].getOccupants()[0] instanceof Merchant)
 					{
 						Merchant monster = (Merchant) game.map[champ.getY()][champ.getX()].getOccupants()[0];
@@ -264,6 +275,15 @@ public class GameRunner {
 					//should never get to this condition
 					System.out.println("YOU WIN!!!!!!");
 					gameOn = false;
+				}
+				else if(game.map[champ.getY()+1][champ.getX()].explored)
+				{
+					game.map[champ.getY()][champ.getX()].setOccupants(empty);
+					champ.setY(champ.getY()+1);
+					
+					
+					
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 				}
 				else
 				{
@@ -707,8 +727,9 @@ public class GameRunner {
 {
 					
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
-					champ.setX(champ.getX()-1);
 					
+					champ.setX(champ.getX()-1);
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 					if(game.map[champ.getY()][champ.getX()].getOccupants()[0] instanceof Merchant)
 					{
 						Merchant monster = (Merchant) game.map[champ.getY()][champ.getX()].getOccupants()[0];

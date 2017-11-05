@@ -20,7 +20,7 @@ public class Shop extends Chamber{
 	        }
 	        else
 	        {
-	            System.out.print("[   ]");
+	            System.out.print("[ S ] \n");
 	        }
 
 	}
