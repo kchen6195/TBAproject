@@ -8,7 +8,7 @@ public class Player implements Bots{
 	private int posX;
 	private int posY;
 	public int gold;
-	private String[] inventory = new String[3];
+	public String[] inventory = new String[3];
 	public Player(String sword, String armor, String food)
 	{
 		this.inventory[0]= sword;

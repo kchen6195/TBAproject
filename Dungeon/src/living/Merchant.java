@@ -85,8 +85,55 @@ public class Merchant extends Enemies{
 		}
 		return "";
 	}
-	
-	
+	public String getType()
+	{
+		if(level == 1)
+		{
+			return "bronze";
+		}
+		if(level == 2)
+		{
+			return "silver";
+		}
+		if(level == 3)
+		{
+			return "golden";
+		}
+		if(level == 4)
+		{
+			return "dragon";
+		}
+		if(level >= 5)
+		{
+			return "magic";
+		}
+		return " ";
+		
+	}
+	public String invFood()
+	{
+		if(level == 1)
+		{
+			return "apple";
+		}
+		if(level == 2)
+		{
+			return "orange";
+		}
+		if(level == 3)
+		{
+			return "pear";
+		}
+		if(level == 4)
+		{
+			return "dragonfruit";
+		}
+		if(level >= 5)
+		{
+			return "magicfruit";
+		}
+		return " ";
+	}
 	public void printBot()
 	{
 		/*System.out.println(cry + "\n"
