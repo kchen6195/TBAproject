@@ -6,7 +6,7 @@ public class Enemies implements Bots{
 	protected int level;
 	public int damage;
 	public int health;
-	protected String cry;
+	public String cry;
 	private boolean rare;
 	public Enemies(int floor)
 	{
@@ -57,7 +57,7 @@ public class Enemies implements Bots{
 		}
 		if(level == 1)
 		{
-			return utilities.getRandom(1,3);
+			return utilities.getRandom(1,1);
 		}
 		if(level == 2)
 		{

@@ -9,7 +9,7 @@ public abstract class Chamber {
 
 	
 	private Bots[] occupants;
-	private int gold;
+	public int gold;
 	public boolean explored;
     private int x, y;
     

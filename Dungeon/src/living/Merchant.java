@@ -1,8 +1,8 @@
 package living;
 
 public class Merchant extends Enemies{
-	private String[] product= new String[3];
-	private int[] price= new int[3];
+	public String[] product= new String[3];
+	public int[] price= new int[3];
 	public Merchant(int floor) {
 		super(floor, true);
 		this.cry="What would you like to buy?";
@@ -41,15 +41,15 @@ public class Merchant extends Enemies{
 	{
 		if(level == 1)
 		{
-			return "bronze armor +7 health";
+			return "bronze armor +11 health";
 		}
 		if(level == 2)
 		{
-			return "silver armor +9 health";
+			return "silver armor +14 health";
 		}
 		if(level == 3)
 		{
-			return "golden armor +11 health";
+			return "golden armor +20 health";
 		}
 		if(level == 4)
 		{

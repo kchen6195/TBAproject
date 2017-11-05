@@ -10,7 +10,7 @@ public class Fight extends Chamber{
 	}
 	public void print()
 	{
-		  if (getOccupants().length != 0)
+		  if (getOccupants().length != 0 )
 	        {
 			  if(getOccupants().length== 2)
 			  {

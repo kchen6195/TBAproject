@@ -18,6 +18,7 @@ public class GameRunner {
 	public static void main(String[] args) {
 		Bots[] empty = new Bots[0];
 		Player champ = new Player();
+		boolean action = true;
 		//x.printBot();
 		//System.out.println((int)(Math.random()*5 + 1));
 		Board game = new Board(5,5);
@@ -29,6 +30,8 @@ public class GameRunner {
 		boolean lose = false;
 		while(gameOn)
 		{
+			action = true;
+			
 			//check for player health each time;
 			game.printBoard();
 			Scanner move = new Scanner(System.in);
@@ -79,28 +82,159 @@ public class GameRunner {
 				}
 				else
 				{
-					game.map[champ.getY()][champ.getX()].explored = true;
-					//after kill
 					
 					game.map[champ.getY()][champ.getX()].setOccupants(empty);
 					champ.setX(champ.getX()+1);
-					if(game.map[champ.getY()][champ.getX()].getOccupants().length==2)
+					
+					if(game.map[champ.getY()][champ.getX()].getOccupants()[0] instanceof Merchant)
 					{
-					/*	boolean action = true;
+						Merchant monster = (Merchant) game.map[champ.getY()][champ.getX()].getOccupants()[0];
+						System.out.println("BUY SOMETHING");
+						System.out.println("BattleCry: "+ monster.cry );
+						System.out.println("Player Damage: " + champ.damage + " Player Health: "+ champ.health + "/"+ champ.maxH + " " +" Gold : " + champ.gold  
+								+ "\n" + "Food: "+ champ.food);
+						System.out.println((monster.cry + "\n"
+								+"Products: "+ "\n" 
+								+ monster.product[0]+ " : "+ monster.price[0]+" gold" +"\n"
+								+ monster.product[1]+ " : "+ monster.price[1]+" gold" + "\n"
+								+ monster.product[2]+ " : "+ monster.price[2]+" gold" + "\n"
+								+ "TO BUY SAY 'SWORD' OR 'ARMOR' OR 'FOOD'"));
 						while(action)
 						{
 							Scanner fight = new Scanner(System.in);
-							if(fight.next().equalsIgnoreCase("attack"))
+							String act = fight.next();
+							
+							if(act.equalsIgnoreCase("attack"))
 									{
-										
+										monster.health = monster.health - champ.damage;
+										champ.health = champ.health - monster.damage;
+										if(champ.health <= 0)
+										{
+											System.out.println("YOU LOSE");
+											gameOn = false;
+											action = false;
+										}
+										if(monster.health <= 0)
+										{
+											
+											action = false;
+											
+										}
 									}
+							else if(act.equalsIgnoreCase("SWORD"))
+							{
+								if(champ.gold >= monster.price[0])
+								{
+									champ.gold = champ.gold - monster.price[0];
+									champ.damage = 4;
+									System.out.println("YOU BOUGHT "+ monster.product[0]);
+									System.out.println("Player Damage: " + champ.damage + " Player Health: "+ champ.health + "/"
+									+ champ.maxH + " " +" Gold : " + champ.gold+ "\n" + "Food: "+ champ.food);
+
+								}
+								
+							}
+							else if(act.equalsIgnoreCase("ARMOR"))
+							{
+								if(champ.gold >= monster.price[1])
+								{
+									champ.gold = champ.gold - monster.price[1];
+									champ.maxH = 11;
+									System.out.println("YOU BOUGHT "+ monster.product[1]);
+									System.out.println("Player Damage: " + champ.damage + " Player Health: "+ champ.health +
+											"/"+ champ.maxH + " " +" Gold : " + champ.gold+ "\n" + "Food: "+ champ.food);
+								}
+								
+							}
+							else if(act.equalsIgnoreCase("FOOD"))
+							{
+								if(champ.gold >= monster.price[2])
+								{
+									champ.gold = champ.gold - monster.price[2];
+									champ.food= "apple"; 
+									System.out.println("YOU BOUGHT "+ monster.product[2]);
+									System.out.println("Player Damage: " + champ.damage + " Player Health: "+ champ.health 
+											+ "/"+ champ.maxH + " " +" Gold : " + champ.gold+ "\n" + "Food: "+ champ.food);
+								}
+								
+							}
+							else if(act.equalsIgnoreCase("HEAL"))
+							{
+								if(champ.food == "apple")
+								{
+									
+								}
+								champ.food = " ";
+							}
+							else
+							{
+								System.out.println("SAY LEAVE TO LEAVE");
+							}
+							
+							
+						}
+					}
+					else if(game.map[champ.getY()][champ.getX()].getOccupants()[0] instanceof Enemies)
+					{
+					game.map[champ.getY()][champ.getX()].addOccupant(champ);
+					Enemies enny = (Enemies) game.map[champ.getY()][champ.getX()].getOccupants()[0];
+					if(game.map[champ.getY()][champ.getX()].getOccupants().length==2)
+					{
+						System.out.println("FIGHT THEM NOW");
+						
+						
+						
+						while(action)
+						{
+							System.out.println("BattleCry: "+ enny.cry + " Damage: "+ enny.damage
+									+ " Health: "+ enny.health);
+							System.out.println("Player Damage: " + champ.damage + " Player Health: "+ champ.health+ "/"+ 
+									champ.maxH + " " +  " Gold : " + champ.gold+ "\n" + "Food: "+ champ.food);
+							Scanner fight = new Scanner(System.in);
+							String act = fight.next();
+							if(act.equalsIgnoreCase("attack"))
+									{
+								enny.health = enny.health - champ.damage;
+										champ.health = champ.health - enny.damage;
+										if(champ.health <= 0)
+										{
+											System.out.println("YOU LOSE");
+											gameOn = false;
+											action = false;
+										}
+										if(enny.health <= 0)
+										{
+											
+											action = false;
+											
+										}
+									}
+							if(act.equalsIgnoreCase("heal"))
+							{
+								
+							}
+							else
+							{
+								System.out.println("ATTACK OR HEAL");
+							}
+							
+							
 						}
 						
-					*/
+					
 					}
-					System.out.println(champ.getX());
+					game.map[champ.getY()][champ.getX()].explored = true;
+					//after kill
+					champ.gold +=game.map[champ.getY()][champ.getX()].gold;
+					game.map[champ.getY()][champ.getX()].gold = 0;
+					game.map[champ.getY()][champ.getX()].setOccupants(empty);
+					
+					
 					game.map[champ.getY()][champ.getX()].addOccupant(champ);
 					
+					
+					
+				}
 				}
 			}
 			

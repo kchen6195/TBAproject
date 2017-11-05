@@ -8,6 +8,6 @@ public class utilities {
 	}
 	public static int getGold(int level)
 	{
-		return getRandom(5,10)*level;
+		return getRandom(8,10)*level;
 	}
 }

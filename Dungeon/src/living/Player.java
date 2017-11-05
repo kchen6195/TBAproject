@@ -1,11 +1,13 @@
 package living;
 
 public class Player implements Bots{
-	private int damage;
-	private int health;
-	private String food;
+	public int damage;
+	public int health;
+	public int maxH;
+	public String food;
 	private int posX;
 	private int posY;
+	public int gold;
 	private String[] inventory = new String[3];
 	public Player(String sword, String armor, String food)
 	{
@@ -14,6 +16,7 @@ public class Player implements Bots{
 		this.inventory[2]= food;
 		this.damage = getDamage();
 		this.health= getHealth();
+		this.maxH = getHealth();
 		this.food= getFood();
 		setX(0);
 		setY(0);
@@ -50,15 +53,15 @@ public class Player implements Bots{
 	{
 		if(inventory[1]=="bronze")
 		{
-			return 7;
+			return 11;
 		}
 		if(inventory[1]=="silver")
 		{
-			return 9;
+			return 14;
 		}
 		if(inventory[1]=="golden")
 		{
-			return 11;
+			return 20;
 		}
 		if(inventory[1]=="dragon")
 		{
@@ -68,7 +71,7 @@ public class Player implements Bots{
 		{
 			return 70;
 		}
-		return 3;
+		return 8;
 	}
 	public String getFood()
 	{
