@@ -22,7 +22,7 @@ public class Fight extends Chamber{
 	        }
 	        else if (this.explored)
 	        {
-	            System.out.print("[ _ ]");
+	            System.out.print("[ X ]");
 	        }
 	        else
 	        {

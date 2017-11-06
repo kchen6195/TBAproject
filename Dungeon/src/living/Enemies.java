@@ -36,15 +36,15 @@ public class Enemies implements Bots{
 		}
 		if(level == 3)
 		{
-			return utilities.getRandom(4,5);
+			return utilities.getRandom(3,4);
 		}
 		if(level == 4)
 		{
-			return utilities.getRandom(7,8);
+			return utilities.getRandom(4,5);
 		}
 		if(level >= 5)
 		{
-			return utilities.getRandom(10,12);
+			return utilities.getRandom(5,6);
 		}
 		
 		return 0;
@@ -61,20 +61,20 @@ public class Enemies implements Bots{
 		}
 		if(level == 2)
 		{
-			return utilities.getRandom(1,1);
-			//return utilities.getRandom(4,8);
+			
+			return utilities.getRandom(2,4);
 		}
 		if(level == 3)
 		{
-			return utilities.getRandom(11,17);
+			return utilities.getRandom(5,7);
 		}
 		if(level == 4)
 		{
-			return utilities.getRandom(17,22);
+			return utilities.getRandom(7,12);
 		}
 		if(level >= 5)
 		{
-			return utilities.getRandom(20,30);
+			return utilities.getRandom(13,14);
 		}
 		
 		return 0;
