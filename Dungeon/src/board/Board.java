@@ -8,11 +8,23 @@ import rooms.Chamber;
 import rooms.Fight;
 import rooms.Shop;
 import util.utilities;
-
+/*
+ * Author: Kelvin Chen
+ * Title: TBAproject
+ * Date: 11/5/17
+ * 
+ */
 public class Board {
 	public Chamber[][] map;
 	private int maxY;
 	private int maxX;
+	/*
+	 * Author: Kelvin Chen
+	 * Description: constructor
+	 *
+	 * @params: vert - dimensions of verticle;
+	 * @params: horz - dimensions of horzontal;
+	 */
 	public Board(int vert, int horz)
 	{
 		this.maxY = vert;
@@ -40,19 +52,44 @@ public class Board {
             	}
             	else
             	{
-            		Enemies enny = new Enemies(j+1);
+            		/*
+            		 * Author: Kelvin Chen
+            		 * Description: summons ULTRA MONSTER
+            		 *	1 PERCENT CHANCE INSTA KILL 
+            		 * 
+            		 * 
+            		 */
+            		boolean rarity = false;
+            		if(utilities.getRandom(1,100)==1)
+            		{
+            			rarity = true;
+            		}
+            		Enemies enny = new Enemies(j+1,rarity);
             		Bots[] bots = {enny};
-            		map[j][i]= new Fight(bots,utilities.getGold(j+1),false,j+1,i+1);
+            		map[j][i]= new Fight(bots,utilities.getGold(j+1),true,j+1,i+1);
             	}
             }
 	}
 }
+	/*
+	 * Author: Kelvin Chen
+	 * Description: overloaded constructor
+	 *
+	 * @params: vert - dimensions of board side;
+	 * 
+	 */
 	public Board(int vert)
 	{
 		this(vert,vert);
 	}
 	
-	
+	/*
+	 * Author: Kelvin Chen
+	 * Description: for loops and calls print for each bot
+	 *
+	 * 
+	 * 
+	 */
 	public void printBoard()
 	{
 		for (int j = 0; j<this.map.length; j++)

@@ -1,5 +1,10 @@
 package living;
-
+/*
+ * Author: Kelvin Chen
+ * Title: TBAproject
+ * Date: 11/5/17
+ * 
+ */
 import util.utilities;
 
 public class Enemies implements Bots{
@@ -8,10 +13,24 @@ public class Enemies implements Bots{
 	public int health;
 	public String cry;
 	private boolean rare;
+	/*
+	 * Author: Kelvin Chen
+	 * Description: overloaded constructor
+	 *
+	 * @params: floor - level for determining health and damage;
+	 * 
+	 */
 	public Enemies(int floor)
 	{
 		 this(floor,false);
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: constructor
+	 *
+	 * @params: floor - level for determining health and damage;
+	 * 			rare - determines for super mob
+	 */
 	public Enemies(int floor,boolean rare)
 	{
 		this.level = floor;
@@ -20,6 +39,11 @@ public class Enemies implements Bots{
 		this.health = this.getHealth();
 		this.cry = this.getBattleCry();
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets damage for mob based on level
+	 * 
+	 */
 	public int getDamage()
 	{
 		if(rare)
@@ -49,6 +73,11 @@ public class Enemies implements Bots{
 		
 		return 0;
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets health for mob based on level
+	 * 
+	 */
 	public int getHealth()
 	{
 		if(rare)
@@ -79,6 +108,11 @@ public class Enemies implements Bots{
 		
 		return 0;
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets battlecry for mob based on level
+	 * 
+	 */
 	public String getBattleCry()
 	{
 		int x = utilities.getRandom(0,2);
@@ -115,6 +149,11 @@ public class Enemies implements Bots{
 		
 		return  "no";
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: prints map block
+	 * 
+	 */
 	public void printBot()
 	{
 		/*System.out.print("BattleCry: "+ cry + " Damage: "+ damage

@@ -1,5 +1,10 @@
 package living;
-
+/*
+ * Author: Kelvin Chen
+ * Title: TBAproject
+ * Date: 11/5/17
+ * 
+ */
 public class Player implements Bots{
 	public int damage;
 	public int health;
@@ -9,6 +14,13 @@ public class Player implements Bots{
 	private int posY;
 	public int gold;
 	public String[] inventory = new String[3];
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets sword for shop
+	 * @params: sword- damage;
+	 * 			armor- max health;
+	 * 			food - food;
+	 */
 	public Player(String sword, String armor, String food)
 	{
 		this.inventory[0]= sword;
@@ -21,10 +33,20 @@ public class Player implements Bots{
 		setX(0);
 		setY(0);
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: overloaded constructor
+	 * 
+	 */
 	public Player()
 	{
 		this(" ", " ", " ");
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets damage for player
+	 * 
+	 */
 	public int getDamage()
 	{
 		if(inventory[0]=="bronze")
@@ -49,6 +71,11 @@ public class Player implements Bots{
 		}
 		return 1;
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets max health for player
+	 * 
+	 */
 	public int getHealth()
 	{
 		if(inventory[1]=="bronze")
@@ -73,6 +100,11 @@ public class Player implements Bots{
 		}
 		return 8;
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets food for player
+	 * 
+	 */
 	public String getFood()
 	{
 		return inventory[2];

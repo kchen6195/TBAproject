@@ -12,7 +12,12 @@ import rooms.Fight;
 import rooms.Shop;
 import util.utilities;
 
-
+/*
+ * Author: Kelvin Chen
+ * Title: TBAproject
+ * Date: 11/5/17
+ * 
+ */
 public class GameRunner {
 
 	public static void main(String[] args) {

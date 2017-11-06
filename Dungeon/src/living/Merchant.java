@@ -1,5 +1,10 @@
 package living;
-
+/*
+ * Author: Kelvin Chen
+ * Title: TBAproject
+ * Date: 11/5/17
+ * 
+ */
 public class Merchant extends Enemies{
 	public String[] product= new String[3];
 	public int[] price= new int[3];
@@ -13,6 +18,11 @@ public class Merchant extends Enemies{
 		this.price[1] = level * 10;
 		this.price[2] = level * 5;
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets sword for shop
+	 * 
+	 */
 	public String getSword()
 	{
 		if(level == 1)
@@ -37,6 +47,11 @@ public class Merchant extends Enemies{
 		}
 		return "";
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets armor for shop
+	 * 
+	 */
 	public String getArmor()
 	{
 		if(level == 1)
@@ -61,6 +76,11 @@ public class Merchant extends Enemies{
 		}
 		return "";
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets food for shop
+	 * 
+	 */
 	public String getFood()
 	{
 		if(level == 1)
@@ -85,6 +105,11 @@ public class Merchant extends Enemies{
 		}
 		return "";
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: used for setting inventory
+	 * 
+	 */
 	public String getType()
 	{
 		if(level == 1)
@@ -110,6 +135,11 @@ public class Merchant extends Enemies{
 		return " ";
 		
 	}
+	/*
+	 * Author: Kelvin Chen
+	 * Description: gets food for inventory
+	 * 
+	 */
 	public String invFood()
 	{
 		if(level == 1)
